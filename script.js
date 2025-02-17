@@ -125,6 +125,12 @@ $(document).ready(function() {
 
 
 $(document).ready(function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const cost = urlParams.get("cost");
+    if (cost) {
+        $("#numberInput").val(cost);
+    }
+    
     $("#convertBtn").click(function() {
         let numStr = $("#numberInput").val().trim();
 
@@ -365,6 +371,7 @@ function calculateBuildingCost() {
     }
     
     buildingCost = Math.ceil(buildingCost);
+    $("#numberToWordsLink").attr("href", "./numbertoletters.html?cost=" + buildingCost);
     $("#calculatedCost").text(buildingCost);
     amtToBuy = targetAmt - amtOwned;
     $("#amtToBuy").text(amtToBuy);
