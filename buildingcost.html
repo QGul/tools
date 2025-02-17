@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Building Cost Calculator</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+	<a href="./cookieclicker.html"><b>Back</b></a>
+	<p class="title">Building Cost Calculator</p>
+	<p>Calculate the total amount of cookies you'll need to reach the target amount of buildings. You will most likely get
+		your answer in the scientific e notation. To know what it is in words, you can use the <a
+			href="./numbertoletters.html">number to words tool</a>.</p>
+	<p>Note: due to rounding errors, this calculator is not
+		perfectly accurate. However, the error margin is negligible. Another thing: don't use the heavenly upgrades option
+		when buying under the free amount and don't try to calculate selling prices.</p>
+	<div class="fourpxmarginleft">Select a building:</div>
+	<div class="dropdown">
+		<button onclick="dropdown()" class="dropbtn" id="buildingSelectbtn">Cursor</button>
+		<div id="dropdownMenu" class="dropdown-content">
+			<button onclick="selBuilding('Cursor')">Cursor</button>
+			<button onclick="selBuilding('Grandma')">Grandma</button>
+			<button onclick="selBuilding('Farm')">Farm</button>
+			<button onclick="selBuilding('Mine')">Mine</button>
+			<button onclick="selBuilding('Factory')">Factory</button>
+			<button onclick="selBuilding('Bank')">Bank</button>
+			<button onclick="selBuilding('Temple')">Temple</button>
+			<button onclick="selBuilding('Wizard Tower')">Wizard Tower</button>
+			<button onclick="selBuilding('Shipment')">Shipment</button>
+			<button onclick="selBuilding('Alchemy Lab')">Alchemy Lab</button>
+			<button onclick="selBuilding('Portal')">Portal</button>
+			<button onclick="selBuilding('Time Machine')">Time Machine</button>
+			<button onclick="selBuilding('Antimatter Condenser')">Antimatter Condenser</button>
+			<button onclick="selBuilding('Prism')">Prism</button>
+			<button onclick="selBuilding('Chancemaker')">Chancemaker</button>
+			<button onclick="selBuilding('Fractal Engine')">Fractal Engine</button>
+			<button onclick="selBuilding('Javascript Console')">Javascript Console</button>
+			<button onclick="selBuilding('Idleverse')">Idleverse</button>
+			<button onclick="selBuilding('Cortex Baker')">Cortex Baker</button>
+			<button onclick="selBuilding('You')">You</button>
+		</div>
+	</div>
+	<div class="fourpxmarginleft">Enter amounts:</div>
+	<input id="amountOwnedInput" class="fourpxmarginleft" type="number" placeholder="Amount owned"></input>
+	<br>
+	<input id="targetAmountInput" class="fourpxmarginleft" type="number" placeholder="Target amount"></input>
+	<br>
+	<label>
+		<input type="checkbox" id="starterHUowned" class="fourpxmarginleft">
+		Starter Kit (cursors) and/or Starter Kitchen (grandmas) heavenly upgrades owned
+	</label>
+	<br>
+	<button id="advancedBtn" type="button" class="btn btn-outline-secondary btn-sm fourpxmarginleft"
+		onclick="advanced()">Advanced...</button>
+	<div id="advanced" class="fourpxmarginleft">
+
+		<label><input type="checkbox" id="seasonSavings" class="cheaperBldns" data-multiplier="0.99">Season Savings upgrade owned (1%)</label>
+		<br>
+		<label><input type="checkbox" id="santasDominion" class="cheaperBldns" data-multiplier="0.99">Santa's Dominion upgrade owned (1%)</label>
+		<br>
+		<label><input type="checkbox" id="fabergeEgg" class="cheaperBldns" data-multiplier="0.99">Faberge Egg upgrade owned (1%)</label>
+		<br>
+
+
+		<span>Building fortune upgrades owned (7%): </span>
+		<label><input type="checkbox" id="f1">#001 (cursors)</label>
+		<label><input type="checkbox" id="f2">#002 (grandmas)</label>
+		<label><input type="checkbox" id="f3">#003 (farms)</label>
+		<label><input type="checkbox" id="f4">#004 (mines)</label>
+		<label><input type="checkbox" id="f5">#005 (factories)</label>
+		<label><input type="checkbox" id="f6">#006 (banks)</label>
+		<label><input type="checkbox" id="f7">#007 (temples)</label>
+		<label><input type="checkbox" id="f8">#008 (wizard towers)</label>
+		<label><input type="checkbox" id="f9">#009 (shipments)</label>
+		<label><input type="checkbox" id="f10">#010 (alchemy labs)</label>
+		<label><input type="checkbox" id="f11">#011 (portals)</label>
+		<label><input type="checkbox" id="f12">#012 (time machines)</label>
+		<label><input type="checkbox" id="f13">#013 (antimatter condensers)</label>
+		<label><input type="checkbox" id="f14">#014 (prisms)</label>
+		<label><input type="checkbox" id="f15">#015 (chancemakers)</label>
+		<label><input type="checkbox" id="f16">#016 (fractal engines)</label>
+		<label><input type="checkbox" id="f17">#017 (javascript consoles)</label>
+		<label><input type="checkbox" id="f18">#018 (idleverses)</label>
+		<label><input type="checkbox" id="f19">#019 (cortex bakers)</label>
+		<label><input type="checkbox" id="f20">#020 (you)</label>
+		<br>
+		<label><input type="checkbox" id="100" class="cheaperBldns" data-multiplier="0.99">Fortune #100 upgrade owned (1%)</label>
+		<br>
+		<label><input type="checkbox" id="divineDiscount" class="cheaperBldns" data-multiplier="0.99">Divine Discount heavenly upgrade owned (1%)</label>
+		<br>
+		<label><input type="checkbox" id="everythingMustGo" class="cheaperBldns" data-multiplier="0.95">Everything Must Go effect is active (5%)</label>
+		<br>
+		<label><input type="checkbox" id="summonCraftyPixies" class="cheaperBldns" data-multiplier="0.98">Crafty Pixies effect is active (2%)</label>
+		<br>
+		<span>Dotjeiess slotted in:</span>
+		<label><input type="checkbox" id="dotjeiessDiamond" class="cheaperBldns" data-multiplier="0.93">Diamond (7%)</label>
+		<label><input type="checkbox" id="dotjeiessRuby" class="cheaperBldns" data-multiplier="0.95">Ruby (5%)</label>
+		<label><input type="checkbox" id="dotjeiessJade" class="cheaperBldns" data-multiplier="0.98">Jade (2%)</label>
+		<br>
+		<span>Dragon auras active:</span>
+		<label><input type="checkbox" id="fierceHoarder" class="cheaperBldns" data-multiplier="0.98">Fierce Hoarder (2%)</label>
+		<label><input type="checkbox" id="realityBending" class="cheaperBldns" data-multiplier="0.998">Reality Bending (0.2%)</label>
+		<label><input type="checkbox" id="bothAuras" class="cheaperBldns" data-multiplier="0.978">Both (2.2%)</label>
+		<br>
+		<span>Total garden discount (%): </span><input id="gardenBoost" type="number" min="0" max="100" value="0"></input>
+	</div>
+	<br>
+	<button id="bldnCostBtn" type="button" class="btn btn-primary fourpxmarginleft"
+		onclick="calculateBuildingCost()">Calculate</button>
+	<p class="fourpxmarginleft">Total cost to buy <span id="amtToBuy">0</span> more <span
+			id="buildingsName">cursors</span>: <span id="calculatedCost">0</span></p>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
