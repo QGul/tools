@@ -371,7 +371,6 @@ function calculateBuildingCost() {
     }
     
     buildingCost = Math.ceil(buildingCost);
-    $("#numberToWordsLink").attr("href", "./numbertoletters.html?cost=" + buildingCost);
     $("#calculatedCost").text(buildingCost);
     amtToBuy = targetAmt - amtOwned;
     $("#amtToBuy").text(amtToBuy);
