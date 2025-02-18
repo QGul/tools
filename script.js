@@ -374,6 +374,7 @@ $(document).ready(function() {
 
 $("#advanced input[type='checkbox']").change(function() {
     localStorage.setItem(this.id, this.checked);
+    console.log(localStorage.getItem("f100"));
 });
 
 $("#gardenBoost").change(function() {
