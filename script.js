@@ -224,8 +224,8 @@ window.onclick = function(event) {
         var i;
         for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
+            if (openDropdown.classList.contains("show")) {
+                openDropdown.classList.remove("show");
             }
         }
     }
@@ -374,7 +374,6 @@ $(document).ready(function() {
 
 $("#advanced input[type='checkbox']").change(function() {
     localStorage.setItem(this.id, this.checked);
-    console.log(localStorage.getItem("f100"));
 });
 
 $("#gardenBoost").change(function() {
