@@ -358,7 +358,8 @@ $(document).ready(function() {
     $("#fierceHoarder").prop("checked", localStorage.getItem("fierceHoarder") === "true");
     $("#realityBending").prop("checked", localStorage.getItem("realityBending") === "true");
     $("#bothAuras").prop("checked", localStorage.getItem("bothAuras") === "true");
-
+    $("#100").prop("checked", localStorage.getItem("100") === "true");
+    
     $("#gardenBoost").val(localStorage.getItem("gardenBoost") || "0");
 
     for (let i =1; i <= 20; i++) {
