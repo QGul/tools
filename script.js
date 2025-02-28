@@ -458,7 +458,8 @@ function onYouTubeIframeAPIReady() {
             videoId: videoIds[i],
             playerVars: {
                 "autoplay": 0,
-                "controls": 0
+                "controls": 0,
+                "playsinline": 1
             }
         });
     }
