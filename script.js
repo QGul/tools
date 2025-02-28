@@ -477,12 +477,12 @@ function toggleVideo(index) {
             $("#cover" + i).removeClass("playing");
             $("#pause" + i).removeClass("show-playing-gif");
         }
+        players[index].mute();
         players[index].playVideo();
 
         setTimeout(() => {
-            let iframe = document.getElementById(playerIds[index]);
-            if (iframe) iframe.click();
-        }, 100);
+            players[index].unMute();
+        }, 300);
         
         $("#cover" + index).addClass("playing");
         $("#pause" + index).addClass("show-playing-gif");
