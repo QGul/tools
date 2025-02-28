@@ -459,7 +459,13 @@ function onYouTubeIframeAPIReady() {
             playerVars: {
                 "autoplay": 0,
                 "controls": 0,
-                "playsinline": 1
+                "playsinline": 1,
+                "mute": 1
+            },
+            events: {
+                "onReady": (event) => {
+                    event.target.setVolume(100);
+                }
             }
         });
     }
@@ -477,12 +483,11 @@ function toggleVideo(index) {
             $("#cover" + i).removeClass("playing");
             $("#pause" + i).removeClass("show-playing-gif");
         }
-        players[index].mute();
-        players[index].playVideo();
 
+        players[index].playVideo();
         setTimeout(() => {
             players[index].unMute();
-        }, 300);
+        }, 500);
         
         $("#cover" + index).addClass("playing");
         $("#pause" + index).addClass("show-playing-gif");
