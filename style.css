@@ -138,3 +138,70 @@ button.remove:hover {
 #advanced input[type="checkbox"] {
 	margin-right: 5px;
 }
+
+/*Radio*/
+.hidden-video {
+		width: 0;
+		height: 0;
+		visibility: hidden;
+}
+
+.radioCover {
+	transition: filter 0.5s ease-in-out;
+	border-radius: 5%;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.playing {filter: brightness(70%);}
+
+.radioCover:hover {
+	filter: brightness(70%);
+}
+
+.image-container {
+	position: relative;
+	margin-left: 10px;
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	width: 188px;
+}
+
+.playing-gif {
+	position: absolute;
+	top: 94px;
+	left: 94px;
+	transform: translate(-50%, -50%);
+	width: 20%;
+	height: auto;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.show-playing-gif {
+	opacity: 1;
+	visibility: visible;
+}
+
+.radiocategory {
+	margin-left: 10px;
+	margin-top: 15px;
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+.radiodesc {
+	font-size: 15px;
+	word-wrap: break-word;
+}
+
+.general-radio-container {
+	display: flex;
+	gap: 20px;
+	align-items: start;
+}
