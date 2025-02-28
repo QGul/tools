@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Radio</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<!-- <button onclick="stopAll()">Stop playing</button> -->
+		<a href="./index.html"><b>Home</b></a>
+		<p class="title">Radio</p>
+		<p class="radiocategory">Lofi radios (credit: <a href="https://www.youtube.com/@LofiGirl">Lofi Girl</a>)</p>
+		<div class="general-radio-container">
+			<div class="image-container">	
+				<img src="./radiocovers/relaxstudy.png" id="cover0" onclick="toggleVideo(0)" class="radioCover">
+				<img src="./pause.png" id="pause0" class="playing-gif">
+				<div class="radiodesc">lofi hip hop - beats to relax/study to</div>
+			</div>
+			<div class="image-container">
+				<img src="./radiocovers/sleepchill.png" id="cover1" onclick="toggleVideo(1)" class="radioCover">
+				<img src="./pause.png" id="pause1" class="playing-gif">
+				<div class="radiodesc">lofi hip hop - beats to sleep/chill to</div>
+			</div>
+			<div class="image-container">
+				<img src="./radiocovers/synthwave.png" id="cover2" onclick="toggleVideo(2)" class="radioCover">
+				<img src="./pause.png" id="pause2" class="playing-gif">
+				<div class="radiodesc">synthwave - beats to chill/game to</div>
+			</div>
+		</div>
+
+		<p class="radiocategory">NCS radios (credit: <a href="https://www.youtube.com/@NoCopyrightSounds">NCS</a>)</p>
+		<div class="general-radio-container">
+			<div class="image-container">	
+				<img src="./radiocovers/ncsarcade.png" id="cover3" onclick="toggleVideo(3)" class="radioCover">
+				<img src="./pause.png" id="pause3" class="playing-gif">
+				<div class="radiodesc">NCS Arcade</div>
+			</div>
+		</div>
+		<div id="players">
+				<div id="player0" class="hidden-video"></div>
+				<div id="player1" class="hidden-video"></div>
+				<div id="player2" class="hidden-video"></div>
+				<div id="player3" class="hidden-video"></div>
+		</div>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
