@@ -437,8 +437,8 @@ $("#bothAuras").change(function() {
 // Radio
 
 let players = [];
-let playerIds = ["player0", "player1", "player2", "player3"];
-let videoIds = ["jfKfPfyJRdk", "28KRPhVzCus", "4xDzrJKXOOY", "7tNtU5XFwrU"];
+let playerIds = ["player0", "player1", "player2", "player3", "player4", "player5", "player6", "player7", "player8"];
+let videoIds = ["jfKfPfyJRdk", "28KRPhVzCus", "4xDzrJKXOOY", "7tNtU5XFwrU", "S_MOd40zlYU", "Na0w3Mz46GA", "TtkFsfOP9QI", "HuFYqnbVbzY", "P6Segk8cr-c"];
 let currentPlayingIndex = -1;
 
 // Load the YouTube IFrame API
